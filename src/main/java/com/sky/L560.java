@@ -6,7 +6,7 @@ public class L560 {
 
     public static int subarraySum(int[] nums, int k) {
         int count = 0, pre = 0;
-        HashMap < Integer, Integer > mp = new HashMap < > ();
+        HashMap<Integer, Integer> mp = new HashMap<>();
         mp.put(0, 1);
         for (int num : nums) {
             pre += num;
