@@ -24,6 +24,7 @@ public class L94 {
     }
 
     List<Integer> res = new ArrayList<>();
+
     public List<Integer> inorderTraversal(TreeNode root) {
         SortTree(root);
         return res;
@@ -39,5 +40,31 @@ public class L94 {
         if (root.right != null) {
             SortTree(root.right);
         }
+    }
+
+    // 方法二 Morris 中序遍历
+    public List<Integer> inorderTraversal2(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        if (root == null) return ans;
+        while (root != null) {
+            if (root.left != null) {
+                TreeNode predecessor = root.left;
+                while (predecessor.right != null && predecessor.right != root) {
+                    predecessor = predecessor.right;
+                }
+                if (predecessor.right == null) {
+                    predecessor.right = root;
+                    root = root.left;
+                } else {
+                    ans.add(root.val);
+                    root = root.right;
+                    predecessor.right = null;
+                }
+            } else {
+                ans.add(root.val);
+                root = root.right;
+            }
+        }
+        return ans;
     }
 }
