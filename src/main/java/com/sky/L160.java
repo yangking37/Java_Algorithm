@@ -36,7 +36,4 @@ public class L160 {
         }
         return pA;
     }
-
-    public static void main(String[] args) {
-    }
 }

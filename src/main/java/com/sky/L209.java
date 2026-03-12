@@ -14,7 +14,7 @@ public class L209 {
                     sum += nums[ll];
                 }
             }
-            if (sum >= target)
+            if (sum == target)
                 length = Math.min(length, ll - l + 1);
             sum -= nums[l];
             l++;
