@@ -5,10 +5,10 @@ import java.util.*;
 public class L15 {
 
     public static List<List<Integer>> threeSum(int[] nums) {
-        Arrays.sort(nums);
+        Arrays.sort(nums);// 排序
         List<List<Integer>> res = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
-            // 跳过重复元素
+            // 跳过重复元素 第一个使用过了后就会跳到最后一个的后面
             if (i > 0 && nums[i] == nums[i - 1]) continue;
             // 同样是避免重复
             int l = i + 1, r = nums.length - 1;

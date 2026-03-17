@@ -96,21 +96,15 @@ public class L236 {
         return root;
     }
 
-    //方法二 ，直接使用递归, 不过这个判断条件不好想
-    // 其中 lson 和 rson 分别代表 x 节点的左孩子和右孩子
-    TreeNode ans;
-    private boolean dfs(TreeNode root, TreeNode p, TreeNode q) {
-        if (root == null) return false;
-        boolean lson = dfs(root.left, p, q);
-        boolean rson = dfs(root.right, p, q);
-        if ((lson && rson) || ((root.val == p.val || root.val == q.val) && (lson || rson))) {
-            ans = root;
-        }
-        return lson || rson || (root.val == p.val || root.val == q.val);
-    }
-
+    //方法二 ，直接使用递归,
     public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
-        dfs(root, p, q);
-        return ans;
+        if (root == null) return null;
+        if (root.val == p.val || root.val == q.val) return root;
+        TreeNode left = lowestCommonAncestor2(root.left, p, q);
+        TreeNode right = lowestCommonAncestor2(root.right, p, q);
+        if (left != null && right != null) return root;
+        else if (left != null) return left;
+        else if (right != null) return right;
+        return null;
     }
 }

@@ -3,10 +3,12 @@ package com.sky;
 public class L33 {
 
     int ans = -1;
+
     public int search(int[] nums, int target) {
         BinaryFind(target, nums, 0, nums.length - 1);
         return ans;
     }
+
     public void BinaryFind(int target, int[] nums, int start, int end) {
         if (start > end)
             return;
@@ -14,6 +16,10 @@ public class L33 {
             int mid = start + (end - start) / 2;
             BinaryFind(target, nums, start, mid);
             BinaryFind(target, nums, mid + 1, end);
+            return;
+        }
+        if (nums[start] > target) {
+            return;
         }
         while (start <= end) {
             int mid = start + (end - start) / 2;
@@ -44,16 +50,16 @@ public class L33 {
             if (nums[mid] == target) {
                 return mid;
             }
-            if (nums[0] <= nums[mid]) {
-                if (nums[0] <= target && target < nums[mid]) {
+            if (nums[0] <= nums[mid]) { // 判断[0,mid]是否有序
+                if (nums[0] <= target && target < nums[mid]) { // 有序且target在该区间
                     r = mid - 1;
-                } else {
+                } else { // 有序但target不在该区间
                     l = mid + 1;
                 }
-            } else {
-                if (nums[mid] < target && target <= nums[n - 1]) {
+            } else { // [mid+1,right]有序
+                if (nums[mid] < target && target <= nums[n - 1]) { // target在该区间
                     l = mid + 1;
-                } else {
+                } else { // 不在该区间
                     r = mid - 1;
                 }
             }

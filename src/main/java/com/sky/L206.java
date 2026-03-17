@@ -19,22 +19,21 @@ public class L206 {
     }
 
     public ListNode reverseList(ListNode head) {
-        ListNode p, r, q;
-        if (head == null) {
-            return head;
+        ListNode prev = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = prev;
+            prev = head;
+            head = next;
         }
-        p = head;
-        q = p.next;
-        while (q != null) {
-            r = q.next;
-            q.next = p;
-            p = q;
-            q = r;
-        }
-        head.next = null;
-        return p;
+        return prev;
     }
 
-    public static void main(String[] args) {
+    // 递归解法
+    public ListNode reverse(ListNode cur,ListNode prev) {
+        if(cur==null) return prev;
+        ListNode next = cur.next;
+        cur.next = prev;
+        return reverse(next,cur);
     }
 }
