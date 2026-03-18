@@ -13,7 +13,4 @@ public class L169 {
         }
         return candidate;
     }
-
-    public static void main(String[] args) {
-    }
 }
