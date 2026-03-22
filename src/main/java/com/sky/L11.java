@@ -4,7 +4,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class L11 {
-
     public static int maxArea(int[] height) {
         int left = 0, right = height.length - 1;
         int min = Math.min(height[left], height[right]); // 短板

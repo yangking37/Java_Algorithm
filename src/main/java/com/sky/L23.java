@@ -1,8 +1,6 @@
 package com.sky;
 
-import java.util.Deque;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class L23 {
     public static class ListNode {
@@ -67,4 +65,22 @@ public class L23 {
         return mergeTwoLists(merge(lists, l, mid), merge(lists, mid + 1, r));
     }
 
+    // 利用堆进行合并
+    private final PriorityQueue<ListNode> pq = new PriorityQueue<>(Comparator.comparingInt(n -> n.val));
+    public ListNode mergeKLists3(ListNode[] lists) {
+        for (ListNode listNode : lists){
+            while (listNode != null){
+                this.pq.add(listNode);
+                listNode = listNode.next;
+            }
+        }
+        ListNode dummy = new ListNode();
+        ListNode cur = dummy;
+        while (!this.pq.isEmpty()){
+            cur.next = pq.poll();
+            cur = cur.next;
+        }
+        cur.next = null; // 最后一个节点的next要手动置为空，因为priorityqueue有可能打乱顺序，避免环的出现
+        return dummy.next;
+    }
 }

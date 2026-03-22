@@ -28,7 +28,7 @@ public class L78 {
     // 每一次到达叶子节点，也就表明了选择
     public void dfs(int cur, int[] nums) {
         if (cur == nums.length) {
-            ans.add(new ArrayList<Integer>(t));
+            ans.add(new ArrayList<>(t));
             return;
         }
         t.add(nums[cur]);

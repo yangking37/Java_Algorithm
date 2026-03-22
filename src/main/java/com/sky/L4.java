@@ -19,8 +19,8 @@ class L4 {
             int nums1mid = (left + right) / 2;
             int nums2mid = (m + n + 1) / 2 - nums1mid;
             int left1 = (nums1mid == 0 ? Integer.MIN_VALUE : nums1[nums1mid - 1]);
-            int right1 = (nums2mid == 0 ? Integer.MIN_VALUE : nums2[nums2mid - 1]);
             int left2 = (nums1mid == m ? Integer.MAX_VALUE : nums1[nums1mid]);
+            int right1 = (nums2mid == 0 ? Integer.MIN_VALUE : nums2[nums2mid - 1]);
             int right2 = (nums2mid == n ? Integer.MAX_VALUE : nums2[nums2mid]);
             if (left1 <= right2) {
                 median1 = Math.max(left1, right1);
