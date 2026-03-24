@@ -10,9 +10,8 @@ public class L560 {
         mp.put(0, 1);
         for (int num : nums) {
             pre += num;
-            if (mp.containsKey(pre - k)) {
+            if (mp.containsKey(pre - k))
                 count += mp.get(pre - k);
-            }
             mp.put(pre, mp.getOrDefault(pre, 0) + 1);
         }
         return count;

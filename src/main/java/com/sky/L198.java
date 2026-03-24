@@ -27,8 +27,6 @@ public class L198 {
 
     }
 
-
-
     public static void main(String[] args) {
         int[] a = {2,7,9,3,1};
         L198 l = new L198();
