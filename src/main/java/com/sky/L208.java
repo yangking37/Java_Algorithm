@@ -20,7 +20,6 @@ class L208 {
                 if (cur.children[aChar - 'a'] == null) {
                     cur.children[aChar - 'a'] = new Trie();
                 }
-
                 cur = cur.children[aChar - 'a'];
             }
             cur.isEnd = true;

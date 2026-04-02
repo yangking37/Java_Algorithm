@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class L322 {
 
-
     public int coinChange(int[] coins, int amount) {
         Arrays.sort(coins);
         int n = coins.length;
