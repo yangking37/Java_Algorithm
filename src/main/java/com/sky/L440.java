@@ -32,11 +32,11 @@ public class L440 {
         return steps;
     }
     public static void main(String[] args) {
-        String[] a = new String[50];
+        String[] a = new String[5000];
         for (int i = 0; i < a.length; i++) {
             a[i] = String.valueOf(i + 1);
         }
-        Arrays.sort(a, (o1, o2) -> (o1 + o2).compareTo(o2 + o1));
+        Arrays.sort(a);
         System.out.println(Arrays.toString(a));
     }
 }

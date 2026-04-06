@@ -15,7 +15,7 @@ public class LCR_143 {
             this.right = right;
         }
     }
-
+    // 与L572类似
     public boolean isSubStructure(TreeNode A, TreeNode B) {
         if (A == null || B == null) {
             return false;

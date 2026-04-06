@@ -8,9 +8,8 @@ public class L347 {
         for (int num : nums) {
             occurrences.put(num, occurrences.getOrDefault(num, 0) + 1);
         }
-
         // int[] 的第一个元素代表数组的值，第二个元素代表了该值出现的次数
-        PriorityQueue<int[]> queue = new PriorityQueue<>((m, n) -> m[1] - n[1]);
+        PriorityQueue<int[]> queue = new PriorityQueue<>(Comparator.comparingInt(m -> m[1]));
         // 维护一个小顶堆，如果某个元素的出现次数比堆顶元素要大，则出堆
         for (Map.Entry<Integer, Integer> entry : occurrences.entrySet()) {
             int num = entry.getKey(), count = entry.getValue();
