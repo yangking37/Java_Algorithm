@@ -31,7 +31,4 @@ public class L383 {
         }
         return true;
     }
-
-    public static void main(String[] args) {
-    }
 }
