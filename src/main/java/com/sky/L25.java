@@ -1,8 +1,5 @@
 package com.sky;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class L25 {
     public static class ListNode {
         int val;

@@ -1,5 +1,9 @@
 package com.sky;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class L63 {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int n = obstacleGrid.length, m = obstacleGrid[0].length;
@@ -17,5 +21,19 @@ public class L63 {
             }
         }
         return f[m - 1];
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(()->{
+
+        });
+        t1.start();
+        try {
+            t1.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        boolean interrupted = t1.isInterrupted();
+        System.out.println(t1.getName());
     }
 }

@@ -6,17 +6,15 @@ import java.util.Deque;
 public class L71 {
     public String simplifyPath(String path) {
         String[] paths = path.split("/");
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         Deque<String> stack = new ArrayDeque<>();
         for (String s : paths) {
             if (!s.isEmpty()) {
                 if (s.equals("..")){
-                    if (!stack.isEmpty()){
+                    if (!stack.isEmpty())
                         stack.pollLast();
-                    }
                     continue;
                 }
-
                 if (s.equals("."))
                     continue;
                 stack.offerLast(s);
