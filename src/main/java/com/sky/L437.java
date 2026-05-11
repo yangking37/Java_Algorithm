@@ -49,6 +49,7 @@ public class L437 {
             return;
         if (CurrSum == targetSum) {
             sum += 1;
+//            return; 防止下方有0
         }
         if (root.left != null)
             DFS(root.left, targetSum, CurrSum + root.left.val);
