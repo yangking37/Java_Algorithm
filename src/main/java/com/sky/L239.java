@@ -53,7 +53,7 @@ public class L239 {
         return ans;
     }
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
         int[] a = {1};
         int k = 1;
     }

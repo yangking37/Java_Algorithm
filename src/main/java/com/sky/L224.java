@@ -14,19 +14,14 @@ public class L224 {
         int i = 0;
         while (i < n) {
             if (s.charAt(i) == ' ') {
-                i++;
             } else if (s.charAt(i) == '+') {
                 sign = ops.peek();
-                i++;
             } else if (s.charAt(i) == '-') {
                 sign = -ops.peek();
-                i++;
             } else if (s.charAt(i) == '(') {
                 ops.push(sign);
-                i++;
             } else if (s.charAt(i) == ')') {
                 ops.pop();
-                i++;
             } else {
                 long num = 0;
                 while (i < n && Character.isDigit(s.charAt(i))) {
@@ -34,7 +29,9 @@ public class L224 {
                     i++;
                 }
                 ret += sign * num;
+                continue;
             }
+            i++;
         }
         return ret;
     }

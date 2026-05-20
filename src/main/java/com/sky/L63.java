@@ -1,9 +1,5 @@
 package com.sky;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class L63 {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int n = obstacleGrid.length, m = obstacleGrid[0].length;
